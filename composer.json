@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Hefekranz\\MwsFeeds\\": "lib/hefekranz/MwsFeeds/src"
+            "Hefekranz\\MwsFeeds\\": "src/"
         }
     },
     "require": {
