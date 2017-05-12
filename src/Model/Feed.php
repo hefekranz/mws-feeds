@@ -20,8 +20,9 @@ class Feed
     /** @var  MessageCollection */
     private $messageCollection;
 
-    public function __construct()
+    public function __construct($messageType)
     {
+        $this->setMessageType($messageType);
         $this->setHeader(new Header());
     }
 

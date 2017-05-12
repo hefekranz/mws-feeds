@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Hefekranz\MwsFeeds\Model\FulfillmentData"
+           exclusion-policy="NONE"
+           exclude="false">
+        <property name="carrierCode"
+                  expose="true"
+                  type="string"
+                  serialized-name="CarrierCode">
+        </property>
+        <property name="shippingMethod"
+                  expose="true"
+                  type="string"
+                  serialized-name="ShippingMethod">
+        </property>
+        <property name="shipperTrackingNumber"
+                  expose="true"
+                  type="string"
+                  serialized-name="ShipperTrackingNumber">
+        </property>
+    </class>
+</serializer>

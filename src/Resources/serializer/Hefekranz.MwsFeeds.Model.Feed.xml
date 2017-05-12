@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Hefekranz\MwsFeeds\Model\Feed"
+           exclusion-policy="NONE"
+           xml-root-name="AmazonEnvelope"
+           exclude="false">
+        <xml-namespace prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance"/>
+        <xml-namespace prefix="noNamespaceSchemaLocation" uri="amzn-envelope.xsd"/>
+        <property name="header"
+                  expose="true"
+                  type="Hefekranz\MwsFeeds\Model\Header"
+                  serialized-name="Header">
+        </property>
+        <property name="messageType"
+                  expose="true"
+                  type="string"
+                  serialized-name="MessageType">
+        </property>
+        <property name="messageCollection"
+                  expose="true"
+                  type="array">
+            <xml-list inline="true" entry-name="Message" />
+        </property>
+    </class>
+</serializer>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Hefekranz\MwsFeeds\Model\OrderFulfillmentMessageCollection"
+           exclusion-policy="NONE"
+           exclude="false">
+        <!--<property name="documentVersion"-->
+                  <!--expose="true"-->
+                  <!--type="string"-->
+                  <!--serialized-name="DocumentVersion">-->
+        <!--</property>-->
+        <!--<property name="merchantIdentifier"-->
+                  <!--expose="true"-->
+                  <!--type="string"-->
+                  <!--serialized-name="MerchantIdentifier">-->
+        <!--</property>-->
+    </class>
+</serializer>

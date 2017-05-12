@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Hefekranz\MwsFeeds\Model\OrderFulfillmentMessage"
+           exclusion-policy="NONE"
+           xml-root-name="Message"
+           exclude="false">
+        <property name="merchantOrderId"
+                  expose="true"
+                  type="string"
+                  serialized-name="MerchantOrderId">
+        </property>
+        <property name="merchantFulfillmentId"
+                  expose="true"
+                  type="string"
+                  serialized-name="MerchantFulfillmentId">
+        </property>
+        <property name="fulfillmentDate"
+                  expose="true"
+                  type="DateTime"
+                  serialized-name="FulfillmentDate">
+        </property>
+        <property name="fulfillmentData"
+                  serialized-name="FulfillmentData"
+                  type="Hefekranz\MwsFeeds\Model\FulfillmentData">
+        </property>
+        <property name="fulfillmentItemCollection"
+        type="array">
+            <xml-list inline="true" entry-name="Item" />
+        </property>
+    </class>
+</serializer>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Hefekranz\MwsFeeds\Model\FulfillmentItem"
+           exclusion-policy="NONE"
+           exclude="false">
+        <property name="merchantOrderItemId"
+                  expose="true"
+                  type="string"
+                  serialized-name="MerchantOrderItemId">
+        </property>
+        <property name="merchantFulfillmentItemId"
+                  expose="true"
+                  type="string"
+                  serialized-name="MerchantFulfillmentItemId">
+        </property>
+        <property name="quantity"
+                  expose="true"
+                  type="int"
+                  serialized-name="Quantity">
+        </property>
+    </class>
+</serializer>

@@ -14,8 +14,15 @@
             "Hefekranz\\MwsFeeds\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Hefekranz\\MwsFeeds\\Tests": "tests/"
+        },
     "require": {
         "jms/serializer": "^1.7",
         "doctrine/common": "^2.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
     }
 }
