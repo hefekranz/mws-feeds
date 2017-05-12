@@ -1,0 +1,21 @@
+{
+    "name": "hefekranz/mws-feeds",
+    "description": "Models and serialization for amazon mws feeds",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levin Mauritz",
+            "email": "l.mauritz@posteo.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hefekranz\\MwsFeeds\\": "lib/hefekranz/MwsFeeds/src"
+        }
+    },
+    "require": {
+        "jms/serializer": "^1.7",
+        "doctrine/common": "^2.7"
+    }
+}
