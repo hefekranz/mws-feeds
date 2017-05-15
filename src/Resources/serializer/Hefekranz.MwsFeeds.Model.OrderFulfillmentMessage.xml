@@ -8,10 +8,10 @@
         <property name="id"
         serialized-name="MessageID">
         </property>
-        <property name="merchantOrderId"
+        <property name="amazonOrderId"
                   expose="true"
                   type="string"
-                  serialized-name="MerchantOrderId">
+                  serialized-name="AmazonOrderId">
         </property>
         <property name="merchantFulfillmentId"
                   expose="true"

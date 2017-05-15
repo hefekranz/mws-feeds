@@ -25,7 +25,7 @@ class FeedTest extends \PHPUnit_Framework_TestCase
 
         $fulfillment = new OrderFulfillmentMessage();
         $fulfillment->setId("foo");
-        $fulfillment->setMerchantOrderId("OrderId");
+        $fulfillment->setAmazonOrderId("OrderId");
         $fulfillment->setMerchantFulfillmentId("FulfillmentId");
         $fulfillment->setFulfillmentDate(new \DateTime("2017-01-01T01:01:01+0000"));
 

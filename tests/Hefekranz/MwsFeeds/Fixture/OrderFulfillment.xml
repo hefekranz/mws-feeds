@@ -7,7 +7,7 @@
     <MessageType><![CDATA[OrderFulfillment]]></MessageType>
     <Message>
         <MessageID><![CDATA[foo]]></MessageID>
-        <MerchantOrderId><![CDATA[OrderId]]></MerchantOrderId>
+        <AmazonOrderId><![CDATA[OrderId]]></AmazonOrderId>
         <MerchantFulfillmentId><![CDATA[FulfillmentId]]></MerchantFulfillmentId>
         <FulfillmentDate><![CDATA[2017-01-01T01:01:01+0000]]></FulfillmentDate>
         <FulfillmentData>

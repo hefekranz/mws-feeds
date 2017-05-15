@@ -26,7 +26,7 @@ class OrderFulfillmentMessage
     private $id;
 
     /** @var  string */
-    private $merchantOrderId;
+    private $amazonOrderId;
 
     /** @var  string */
     private $merchantFulfillmentId;
@@ -61,6 +61,22 @@ class OrderFulfillmentMessage
     public function setId(string $id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmazonOrderId()
+    {
+        return $this->amazonOrderId;
+    }
+
+    /**
+     * @param string $amazonOrderId
+     */
+    public function setAmazonOrderId(string $amazonOrderId = null)
+    {
+        $this->amazonOrderId = $amazonOrderId;
     }
 
     /**
