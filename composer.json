@@ -16,8 +16,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Hefekranz\\MwsFeeds\\Tests": "tests/"
-        },
+            "Hefekranz\\MwsFeeds\\Tests\\": "tests/"
+        }
+    },
     "require": {
         "jms/serializer": "^1.7",
         "doctrine/common": "^2.7"
