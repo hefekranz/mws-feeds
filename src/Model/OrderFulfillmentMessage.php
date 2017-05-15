@@ -90,7 +90,7 @@ class OrderFulfillmentMessage
     /**
      * @param string $merchantFulfillmentId
      */
-    public function setMerchantFulfillmentId(string $merchantFulfillmentId)
+    public function setMerchantFulfillmentId(string $merchantFulfillmentId = null)
     {
         $this->merchantFulfillmentId = $merchantFulfillmentId;
     }

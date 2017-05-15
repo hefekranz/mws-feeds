@@ -55,7 +55,7 @@ class FulfillmentItem
     /**
      * @param string $merchantFulfillmentItemId
      */
-    public function setMerchantFulfillmentItemId(string $merchantFulfillmentItemId)
+    public function setMerchantFulfillmentItemId(string $merchantFulfillmentItemId = null)
     {
         $this->merchantFulfillmentItemId = $merchantFulfillmentItemId;
     }
@@ -71,7 +71,7 @@ class FulfillmentItem
     /**
      * @param int $quantity
      */
-    public function setQuantity(int $quantity)
+    public function setQuantity(int $quantity = null)
     {
         $this->quantity = $quantity;
     }

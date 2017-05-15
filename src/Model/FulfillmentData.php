@@ -55,7 +55,7 @@ class FulfillmentData
     /**
      * @param string $shippingMethod
      */
-    public function setShippingMethod(string $shippingMethod)
+    public function setShippingMethod(string $shippingMethod = null)
     {
         $this->shippingMethod = $shippingMethod;
     }
@@ -71,7 +71,7 @@ class FulfillmentData
     /**
      * @param string $shipperTrackingNumber
      */
-    public function setShipperTrackingNumber(string $shipperTrackingNumber)
+    public function setShipperTrackingNumber(string $shipperTrackingNumber = null)
     {
         $this->shipperTrackingNumber = $shipperTrackingNumber;
     }

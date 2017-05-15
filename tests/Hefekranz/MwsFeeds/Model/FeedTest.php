@@ -20,14 +20,14 @@ class FeedTest extends \PHPUnit_Framework_TestCase
 {
     public function buildFulfillmentFeed()
     {
-
         $feed = new Feed(Feed::TYPE_ORDER_FULFILLMENT);
         $feed->setMerchantIdentifier("merchantIdentifier");
 
         $fulfillment = new OrderFulfillmentMessage();
+        $fulfillment->setId("foo");
         $fulfillment->setMerchantOrderId("OrderId");
         $fulfillment->setMerchantFulfillmentId("FulfillmentId");
-        $fulfillment->setFulfillmentDate(new \DateTime());
+        $fulfillment->setFulfillmentDate(new \DateTime("2017-01-01T01:01:01+0000"));
 
         $fulfillment->getFulfillmentData()->setCarrierCode("DHL");
         $fulfillment->getFulfillmentData()->setShipperTrackingNumber("TrackingId");
@@ -43,17 +43,16 @@ class FeedTest extends \PHPUnit_Framework_TestCase
         $feed->getMessageCollection()->add($fulfillment);
 
         return $feed;
-
     }
 
     public function testXmlSerialization() {
 
         $feed = $this->buildFulfillmentFeed();
         $serializer = SerializerFactory::build();
-        $data = $serializer->serialize($feed,"xml");
+        $xml = $serializer->serialize($feed,"xml");
 
-        print_r($data);
-
+        $fixture = file_get_contents(__DIR__ . "/../Fixture/OrderFulfillment.xml");
+        $this->assertXmlStringEqualsXmlString($fixture,$xml);
     }
 
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:noNamespaceSchemaLocation="http://g-ecx.images-amazon.com/images/G/01/rainier/help/xsd/release_1_9/amzn-envelope.xsd">
+    <Header>
+        <DocumentVersion><![CDATA[1.01]]></DocumentVersion>
+        <MerchantIdentifier><![CDATA[merchantIdentifier]]></MerchantIdentifier>
+    </Header>
+    <MessageType><![CDATA[OrderFulfillment]]></MessageType>
+    <Message>
+        <MessageID><![CDATA[foo]]></MessageID>
+        <MerchantOrderId><![CDATA[OrderId]]></MerchantOrderId>
+        <MerchantFulfillmentId><![CDATA[FulfillmentId]]></MerchantFulfillmentId>
+        <FulfillmentDate><![CDATA[2017-01-01T01:01:01+0000]]></FulfillmentDate>
+        <FulfillmentData>
+            <CarrierCode><![CDATA[DHL]]></CarrierCode>
+            <ShippingMethod><![CDATA[ShippingMethod]]></ShippingMethod>
+            <ShipperTrackingNumber><![CDATA[TrackingId]]></ShipperTrackingNumber>
+        </FulfillmentData>
+        <Item>
+            <MerchantOrderItemId><![CDATA[OrderItemId]]></MerchantOrderItemId>
+            <MerchantFulfillmentItemId><![CDATA[FulfillmentId]]></MerchantFulfillmentItemId>
+            <Quantity>5</Quantity>
+        </Item>
+    </Message>
+</AmazonEnvelope>
