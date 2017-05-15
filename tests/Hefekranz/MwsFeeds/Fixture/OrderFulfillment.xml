@@ -16,7 +16,7 @@
             <ShipperTrackingNumber><![CDATA[TrackingId]]></ShipperTrackingNumber>
         </FulfillmentData>
         <Item>
-            <MerchantOrderItemId><![CDATA[OrderItemId]]></MerchantOrderItemId>
+            <AmazonOrderItemCode><![CDATA[OrderItemId]]></AmazonOrderItemCode>
             <MerchantFulfillmentItemId><![CDATA[FulfillmentId]]></MerchantFulfillmentItemId>
             <Quantity>5</Quantity>
         </Item>

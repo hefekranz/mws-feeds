@@ -20,7 +20,7 @@ namespace Hefekranz\MwsFeeds\Model;
 class FulfillmentItem
 {
     /** @var  string */
-    private $merchantOrderItemId;
+    private $amazonOrderItemCode;
 
     /** @var  string */
     private $merchantFulfillmentItemId;
@@ -31,17 +31,17 @@ class FulfillmentItem
     /**
      * @return string
      */
-    public function getMerchantOrderItemId()
+    public function getAmazonOrderItemCode()
     {
-        return $this->merchantOrderItemId;
+        return $this->amazonOrderItemCode;
     }
 
     /**
-     * @param string $merchantOrderItemId
+     * @param string $amazonOrderItemCode
      */
-    public function setMerchantOrderItemId(string $merchantOrderItemId)
+    public function setAmazonOrderItemCode(string $amazonOrderItemCode)
     {
-        $this->merchantOrderItemId = $merchantOrderItemId;
+        $this->amazonOrderItemCode = $amazonOrderItemCode;
     }
 
     /**

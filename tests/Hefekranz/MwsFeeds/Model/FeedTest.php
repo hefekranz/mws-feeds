@@ -34,7 +34,7 @@ class FeedTest extends \PHPUnit_Framework_TestCase
         $fulfillment->getFulfillmentData()->setShippingMethod("ShippingMethod");
 
         $item = new FulfillmentItem();
-        $item->setMerchantOrderItemId("OrderItemId");
+        $item->setAmazonOrderItemCode("OrderItemId");
         $item->setMerchantFulfillmentItemId("FulfillmentId");
         $item->setQuantity(5);
 

@@ -4,10 +4,10 @@
     <class name="Hefekranz\MwsFeeds\Model\FulfillmentItem"
            exclusion-policy="NONE"
            exclude="false">
-        <property name="merchantOrderItemId"
+        <property name="amazonOrderItemCode"
                   expose="true"
                   type="string"
-                  serialized-name="MerchantOrderItemId">
+                  serialized-name="AmazonOrderItemCode">
         </property>
         <property name="merchantFulfillmentItemId"
                   expose="true"
