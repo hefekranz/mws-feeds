@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <serializer>
-    <class name="Hefekranz\MwsFeeds\Model\OrderFulfillmentMessageCollection"
+    <class name="Hefekranz\MwsFeeds\Model\MessageCollection"
            exclusion-policy="NONE"
-           exclude="false">
+           exclude="false"
+            inline="false">
     </class>
 
 </serializer>

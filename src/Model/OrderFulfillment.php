@@ -20,11 +20,8 @@ use Hefekranz\MwsFeeds\Model\FulfillmentData;
 use Hefekranz\MwsFeeds\Model\FulfillmentItemCollection;
 use Hefekranz\MwsFeeds\Model\Message;
 
-class OrderFulfillmentMessage
+class OrderFulfillment
 {
-    /** @var  string */
-    private $id;
-
     /** @var  string */
     private $amazonOrderId;
 
@@ -42,25 +39,8 @@ class OrderFulfillmentMessage
 
     public function __construct()
     {
-        $this->setId(uniqid("fulfillment-",true));
         $this->setFulfillmentData(new FulfillmentData());
         $this->setFulfillmentItemCollection(new FulfillmentItemCollection());
-    }
-
-    /**
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param string $id
-     */
-    public function setId(string $id)
-    {
-        $this->id = $id;
     }
 
     /**

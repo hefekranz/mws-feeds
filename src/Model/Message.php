@@ -17,15 +17,45 @@
 namespace Hefekranz\MwsFeeds\Model;
 
 
-use Doctrine\Common\Collections\ArrayCollection;
-
-class MessageCollection extends ArrayCollection
+class Message
 {
-    public function add($item) {
-        $key = $this->count() + 1;
-        $msg = new Message();
-        $msg->setId($key);
-        $msg->setData($item);
-        $this->set($key,$msg);
+
+    private $id;
+
+    private $data;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+
+
+
 }

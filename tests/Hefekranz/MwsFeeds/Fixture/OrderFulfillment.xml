@@ -6,10 +6,11 @@
     </Header>
     <MessageType><![CDATA[OrderFulfillment]]></MessageType>
     <Message>
-        <MessageID><![CDATA[foo]]></MessageID>
-        <AmazonOrderId><![CDATA[OrderId]]></AmazonOrderId>
+        <MessageID><![CDATA[1]]></MessageID>
+        <OrderFulfillment>
+        <AmazonOrderID><![CDATA[OrderId]]></AmazonOrderID>
         <MerchantFulfillmentId><![CDATA[FulfillmentId]]></MerchantFulfillmentId>
-        <FulfillmentDate><![CDATA[2017-01-01T01:01:01+0000]]></FulfillmentDate>
+        <FulfillmentDate><![CDATA[2017-01-01T01:01:01+00:00]]></FulfillmentDate>
         <FulfillmentData>
             <CarrierCode><![CDATA[DHL]]></CarrierCode>
             <ShippingMethod><![CDATA[ShippingMethod]]></ShippingMethod>
@@ -20,5 +21,6 @@
             <MerchantFulfillmentItemId><![CDATA[FulfillmentId]]></MerchantFulfillmentItemId>
             <Quantity>5</Quantity>
         </Item>
+        </OrderFulfillment>
     </Message>
 </AmazonEnvelope>

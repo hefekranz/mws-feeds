@@ -14,18 +14,12 @@
  *
  */
 
-namespace Hefekranz\MwsFeeds\Model;
+namespace Hefekranz\MwsFeeds\Tests;
 
 
-use Doctrine\Common\Collections\ArrayCollection;
-
-class MessageCollection extends ArrayCollection
+class SchemaLoader
 {
-    public function add($item) {
-        $key = $this->count() + 1;
-        $msg = new Message();
-        $msg->setId($key);
-        $msg->setData($item);
-        $this->set($key,$msg);
+    public static function getSchemaDir() {
+        return __DIR__ . "/../src/Resources/schema/";
     }
 }

@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <serializer>
-    <class name="Hefekranz\MwsFeeds\Model\OrderFulfillmentMessage"
+    <class name="Hefekranz\MwsFeeds\Model\OrderFulfillment"
            exclusion-policy="NONE"
-           xml-root-name="Message"
-           exclude="false">
-        <property name="id"
-        serialized-name="MessageID">
-        </property>
+           xml-root-name="OrderFulfillment"
+           expose="true">
         <property name="amazonOrderId"
                   expose="true"
                   type="string"
-                  serialized-name="AmazonOrderId">
+                  serialized-name="AmazonOrderID">
         </property>
         <property name="merchantFulfillmentId"
                   expose="true"
@@ -20,8 +17,8 @@
         </property>
         <property name="fulfillmentDate"
                   expose="true"
-                  type="DateTime"
                   serialized-name="FulfillmentDate">
+            <type><![CDATA[DateTime<"Y-m-d\TH:i:sP">]]></type>
         </property>
         <property name="fulfillmentData"
                   serialized-name="FulfillmentData"

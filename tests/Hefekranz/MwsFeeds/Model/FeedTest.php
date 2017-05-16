@@ -13,7 +13,7 @@ namespace Hefekranz\MwsFeeds\Tests;
 
 use Hefekranz\MwsFeeds\Model\Feed;
 use Hefekranz\MwsFeeds\Model\FulfillmentItem;
-use Hefekranz\MwsFeeds\Model\OrderFulfillmentMessage;
+use Hefekranz\MwsFeeds\Model\OrderFulfillment;
 use Hefekranz\MwsFeeds\Serializer\SerializerFactory;
 
 class FeedTest extends \PHPUnit_Framework_TestCase
@@ -23,8 +23,7 @@ class FeedTest extends \PHPUnit_Framework_TestCase
         $feed = new Feed(Feed::TYPE_ORDER_FULFILLMENT);
         $feed->setMerchantIdentifier("merchantIdentifier");
 
-        $fulfillment = new OrderFulfillmentMessage();
-        $fulfillment->setId("foo");
+        $fulfillment = new OrderFulfillment;
         $fulfillment->setAmazonOrderId("OrderId");
         $fulfillment->setMerchantFulfillmentId("FulfillmentId");
         $fulfillment->setFulfillmentDate(new \DateTime("2017-01-01T01:01:01+0000"));
@@ -50,9 +49,16 @@ class FeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->buildFulfillmentFeed();
         $serializer = SerializerFactory::build();
         $xml = $serializer->serialize($feed,"xml");
-
         $fixture = file_get_contents(__DIR__ . "/../Fixture/OrderFulfillment.xml");
         $this->assertXmlStringEqualsXmlString($fixture,$xml);
+        $reader = new \XMLReader();
+        $reader->xml($xml);
+        $schemaDir = SchemaLoader::getSchemaDir();
+        $this->assertTrue($reader->setSchema( $schemaDir . "OrderFulfillment.xsd"));
+        $this->assertTrue($reader->setSchema( "https://images-na.ssl-images-amazon.com/images/G/01/rainier/help/xsd/release_1_9/amzn-envelope.xsd"));
+        $this->assertTrue($reader->setSchema( $schemaDir . "amzn-base.xsd"));
+        $this->assertTrue($reader->setSchema( $schemaDir . "amzn-header.xsd"));
+        $this->assertTrue($reader->isValid());
     }
 
 
