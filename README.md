@@ -36,22 +36,22 @@ Plain old OO style for building:
 
 use Hefekranz\MwsFeeds\Model\Feed;
 use Hefekranz\MwsFeeds\Model\FulfillmentItem;
-use Hefekranz\MwsFeeds\Model\OrderFulfillmentMessage;
+use Hefekranz\MwsFeeds\Model\OrderFulfillment;
 
         $feed = new Feed(Feed::TYPE_ORDER_FULFILLMENT);
         $feed->setMerchantIdentifier("merchantIdentifier");
 
-        $fulfillment = new OrderFulfillmentMessage();
-        $fulfillment->setMerchantOrderId("OrderId");
+        $fulfillment = new OrderFulfillment;
+        $fulfillment->setAmazonOrderId("OrderId");
         $fulfillment->setMerchantFulfillmentId("FulfillmentId");
-        $fulfillment->setFulfillmentDate(new \DateTime());
+        $fulfillment->setFulfillmentDate(new \DateTime("2017-01-01T01:01:01+0000"));
 
         $fulfillment->getFulfillmentData()->setCarrierCode("DHL");
         $fulfillment->getFulfillmentData()->setShipperTrackingNumber("TrackingId");
         $fulfillment->getFulfillmentData()->setShippingMethod("ShippingMethod");
 
         $item = new FulfillmentItem();
-        $item->setMerchantOrderItemId("OrderItemId");
+        $item->setAmazonOrderItemCode("OrderItemId");
         $item->setMerchantFulfillmentItemId("FulfillmentId");
         $item->setQuantity(5);
 
@@ -72,27 +72,30 @@ use Hefekranz\MwsFeeds\Serializer\SerializerFactory;
 Result:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:noNamespaceSchemaLocation="amzn-envelope.xsd">
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:noNamespaceSchemaLocation="http://g-ecx.images-amazon.com/images/G/01/rainier/help/xsd/release_1_9/amzn-envelope.xsd">
   <Header>
     <DocumentVersion><![CDATA[1.01]]></DocumentVersion>
     <MerchantIdentifier><![CDATA[merchantIdentifier]]></MerchantIdentifier>
   </Header>
   <MessageType><![CDATA[OrderFulfillment]]></MessageType>
   <Message>
-    <MessageID><![CDATA[fulfillment-59196780236db0.66944453]]></MessageID>
-    <MerchantOrderId><![CDATA[OrderId]]></MerchantOrderId>
-    <MerchantFulfillmentId><![CDATA[FulfillmentId]]></MerchantFulfillmentId>
-    <FulfillmentDate><![CDATA[2017-05-15T08:32:00+0000]]></FulfillmentDate>
-    <FulfillmentData>
-      <CarrierCode><![CDATA[DHL]]></CarrierCode>
-      <ShippingMethod><![CDATA[ShippingMethod]]></ShippingMethod>
-      <ShipperTrackingNumber><![CDATA[TrackingId]]></ShipperTrackingNumber>
-    </FulfillmentData>
-    <Item>
-      <MerchantOrderItemId><![CDATA[OrderItemId]]></MerchantOrderItemId>
-      <MerchantFulfillmentItemId><![CDATA[FulfillmentId]]></MerchantFulfillmentItemId>
-      <Quantity>5</Quantity>
-    </Item>
+    <MessageID>1</MessageID>
+    <OrderFulfillment>
+      <AmazonOrderID><![CDATA[OrderId]]></AmazonOrderID>
+      <MerchantFulfillmentId><![CDATA[FulfillmentId]]></MerchantFulfillmentId>
+      <FulfillmentDate><![CDATA[2017-01-01T01:01:01+00:00]]></FulfillmentDate>
+      <FulfillmentData>
+        <CarrierCode><![CDATA[DHL]]></CarrierCode>
+        <ShippingMethod><![CDATA[ShippingMethod]]></ShippingMethod>
+        <ShipperTrackingNumber><![CDATA[TrackingId]]></ShipperTrackingNumber>
+      </FulfillmentData>
+      <Item>
+        <AmazonOrderItemCode><![CDATA[OrderItemId]]></AmazonOrderItemCode>
+        <MerchantFulfillmentItemId><![CDATA[FulfillmentId]]></MerchantFulfillmentItemId>
+        <Quantity>5</Quantity>
+      </Item>
+    </OrderFulfillment>
   </Message>
 </AmazonEnvelope>
+
 ```
